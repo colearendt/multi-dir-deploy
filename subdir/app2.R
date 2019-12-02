@@ -9,11 +9,14 @@
 
 library(shiny)
 
+proj_root <- rprojroot::find_root(rprojroot::is_rstudio_project)
+source(paste0(proj_root, "/helpers/helpers.R"))
+
 # Define UI for application that draws a histogram
 ui <- fluidPage(
 
     # Application title
-    titlePanel("Old Faithful Geyser Data"),
+    titlePanel(helper_func("Old Faithful Geyser Data")),
 
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
