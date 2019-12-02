@@ -1,5 +1,7 @@
 # Multi Dir Deploy
 
+**HACKY EXPERIMENT: DO NOT USE**
+
 To try:
 
 - Copy `manifest_rmd.json` or `manifest_shiny.json` to `manifest.json`
