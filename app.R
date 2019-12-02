@@ -4,5 +4,5 @@ res <- source(target_file)
 if (inherits(res$value, "shiny.appobj")) {
   res$value
 } else {
-  shiny::runApp("./subdir/app2.R")
+  shiny::runApp(target_file)
 }
