@@ -63,3 +63,8 @@ The non-interactive context makes things challenging to debug, so more exposure
 here might be nice to support a more complex / complicated workflow. I.e. can I
 see what the working directory is? The content being executed? The list of
 packages being used?
+
+- **A way to link these deployments together** If these deployments are related,
+is it possible for them to link to each other? Reference one another as "peers"
+or "co-dependents"? What if one has a strict dependency on the other? I.e. a
+pin, Rmd updating a pin, Rmd ETL, etc.
