@@ -29,23 +29,23 @@ to cause problems on Connect). There may need to be some IDE functionality or
 user training / conventions to make this easier for users.
 
 - **Which files?** The IDE usually scopes deployments to just a directory with
-an app. How do I figure out which files to include? This experiment includes the
-WHOLE DIRECTORY (every time) and only pivots based on the manifest. Some IDE
-functionality would be helpful here, along with some type of simple file format
-structure (a part of the manifest? an "ignore" file?) that makes clear what
-files to include. The `.dcf` format does this but is hard to reason about
-because it is pipe delimited. Further, this is hard to marshal for git-backed
-content / programmatic deployment
+an app and gives me a nice file selector. How do I figure out which files to
+include? This experiment includes the WHOLE DIRECTORY (every time) and only
+pivots based on the manifest. Some IDE functionality would be helpful here,
+along with some type of simple file format structure (a part of the manifest? an
+"ignore" file?) that makes clear what files to include. The `.dcf` format does
+this but is hard to reason about because it is pipe delimited. Further, this is
+hard to marshal for git-backed content / programmatic deployment.
 
 - **Which manifest?** Although `rsconnect` could dynamically build the manifest
 somehow, the root directory needs to be the basis (which is different from the
 current pattern of the "app" directory). Further, things get tricky with
-programmatic / git-backed deployment, because Connect only understand the notion
+programmatic / git-backed deployment, because Connect only understands the notion
 of a single `manifest.json`. So we will either need smarter clients (to rename /
 rewrite manifests) or Connect to somehow allow the manifest to be specified.
 
 - **Inconsistent manifest specifications** The Shiny deployment method just
-looks for an `app.R` (or maybe some other type of `.R` files?), and does not
+looks for an `app.R` (or maybe some other types of `.R` files?), and does not
 allow specification in the manifest. Rmd allows the specification of the
 "primary document." As a result, I wrote a [hacky wrapper](./app.R) (which is
 not advisable). The manifest is inconsistent, uses unclear heuristics, and is
@@ -60,4 +60,6 @@ bundle" as a publisher would potentially help the debugging process a bit. At a
 minimum, maybe this would be inspecting the manifest? Further, when developing
 the Shiny wrapper, Connect and the IDE behaved differently regarding `runApp()`.
 The non-interactive context makes things challenging to debug, so more exposure
-here might be nice to support a more complex / complicated workflow.
+here might be nice to support a more complex / complicated workflow. I.e. can I
+see what the working directory is? The content being executed? The list of
+packages being used?
