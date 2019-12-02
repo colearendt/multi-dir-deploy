@@ -6,3 +6,4 @@ if (inherits(res$value, "shiny.appobj")) {
 } else {
   shiny::runApp(target_file)
 }
+
